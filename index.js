@@ -43,6 +43,11 @@ app.post('/users/login',async (req,res)=>{
 
 })
 
+app.delete('/users/:id',async (req,res)=>{
+    await users.splice(req.params.id,1)
+    res.send('User is removed');
+})
+
 app.listen(3000,()=>{
     console.log('Server has started!');
 })
